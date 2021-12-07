@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+public/javascript/bundle.js
+public/javascript/bundle.js.LICENSE.txt
+public/javascript/main.bundle.css
