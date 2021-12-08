@@ -1,14 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import { Provider } from "react-redux";
 import store from "./store/store";
 
 import Header from "./components/UI/Header";
-import LandingPage from "./components/LandingPage";
 import Footer from "./components/UI/Footer";
-import Login from "./components/auth/Login";
-import Theme from "./config/theme";
+import LandingPage from "./pages/LandingPage";
+
+import Theme from "./config/Theme";
 
 function App() {
   return (
@@ -16,13 +16,9 @@ function App() {
       <Provider store={store}>
         <Router>
           <Header className="display-block"></Header>
-          <Switch>
-            <Route path="/" exact>
-              <LandingPage></LandingPage>
-            </Route>
-            <Route path="/admin" exact component={Admin}></Route>
-            <Route path="/login" exact component={Login}></Route>
-          </Switch>
+          <Routes>
+            <Route path="/" exact element={LandingPage}></Route>
+          </Routes>
           <Footer></Footer>
         </Router>
       </Provider>
